@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] colors = new string[]
+        {
+            "orange",
+            "blue",
+            "yellow",
+            "aqua",
+            "red"
+        };
+            Array.Sort(colors); //Reverse or sort to sort array
+            foreach (string color in colors)
+            {
+                Console.WriteLine(color.ToUpper());  // ToUpper kad padaryti visas raides dideles
+            }
+            Console.ReadLine();
+
+            Array.Sort(colors, (x, y) => x.Length.CompareTo(y.Length));  // sort by lenght shortest to longest
+            foreach (string color in colors)
+            {
+                Console.WriteLine(color);
+            }
+            Console.ReadLine();
+        }
+    }
+}
