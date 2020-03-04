@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1._2
+{
+    class Program
+    {
+
+        public static string abc(string s) {
+            char a;
+            a = Convert.ToChar(s.Substring(0,1));
+            s = s.TrimStart(a) + a;
+            return s;
+        }
+
+        static void Main(string[] args)
+        {
+            string s;
+            int a;
+            Console.WriteLine("iveskite stringa: ");
+            s = Console.ReadLine();
+            Console.WriteLine("kiek kartu daryti rotacija?: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            for (int i=a; i > 0; i--) {
+                s = abc(s);
+            }
+            Console.WriteLine(s);
+            Console.ReadLine();
+        }
+    }
+}
