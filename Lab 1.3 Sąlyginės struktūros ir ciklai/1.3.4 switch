@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a;
+            Console.WriteLine("kokios figuros 1, 2 ar 3 (stačiakampio, trikampio ar trapecijos) plota reikia apskaiciuoti? ");
+            a = Convert.ToInt32(Console.ReadLine());
+            switch (a)
+            {
+                case 1:
+                    Console.WriteLine("stačiakampio plotis");
+                    break;
+                case 2:
+                    Console.WriteLine("trikampio plotis");
+                    break;
+                case 3:
+                    Console.WriteLine("trapecijos plotis");
+                    break;
+                default:
+                    Console.WriteLine("Blogas pasirinkimas");
+                    break;
+            }
+            Console.ReadLine();
+        }
+    }
+}
