@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x;
+            double y, ats, benz, kaina, isl;
+            double a, c, b;
+            string val;
+            Console.Write("Iveskite x: ");  //1
+            val = Console.ReadLine();
+            x = Convert.ToInt32(val);
+            y = -2.7 * Math.Pow(x, 3) + 0.23 * Math.Pow(x, 2) - 1.4;
+            Console.WriteLine("\n");
+            Console.Write("y = " + y +"     "+ x+ "\n");
+            Console.ReadLine();
+            Console.Write("Iveskite atstuma: "); //2
+            val = Console.ReadLine();
+            ats = Convert.ToDouble(val);
+            Console.WriteLine("\n");
+            Console.Write("Iveskite benzino kieki reikalinga 100 km nuvažiuoti: "); 
+            val = Console.ReadLine();
+            benz = Convert.ToDouble(val);
+            Console.WriteLine("\n");
+            Console.Write("benzino kaina: "); 
+            val = Console.ReadLine();
+            kaina = Convert.ToDouble(val);
+            isl = 2 * ats *(benz/100) * kaina;
+            Console.WriteLine("\n");
+            Console.Write("Kielones islaidos: " + isl + "\n");
+            Console.ReadLine();
+            Console.Write("Iveskite skaiciu: "); //4
+            val = Console.ReadLine();
+            a = Convert.ToDouble(val);
+            b = (a % 1) * 100;
+            c = a - (b / 100);
+            Console.Write("ats: " + c + " eurai ir " + b + " centai");
+            Console.ReadLine();
+        }
+    }
+}
