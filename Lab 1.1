@@ -1,0 +1,49 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			string q = "Auditoriją remontuoja jau 2 savaites";
+			string k1 = "Norėčiau daug ką pasakyt, bet tai negali virsti laišku.", k2 = "Nebent tik ašara, nebent tik šypsena keistam rudens sapne... ", k3 = "Nebent virpėjimu keistu ir neužrašomu,";
+			string k4 = "Nebent tyla…", k5 = "     /V. Mykolaitis-Putinas/";
+			int r, h;
+			double d;
+			string val;
+			string dir = Directory.GetCurrentDirectory();
+			Console.Write("Greitai Prezidento rinkimai! \n");  //1
+			Console.Write(q + "\n");	//2
+			Console.Write("\n");
+			Console.Write("Current directory is:" + dir + "\n"); //4
+			Console.Write(k1 + "\n" + k2 + "\n" + k3 + "\n" + k4 + "\n" + k5 + "\n");	//5
+			Console.Write("\n");
+			Console.Write("Pagrindo spindulys: ");	//6
+			val = Console.ReadLine();
+			r = Convert.ToInt32(val);
+			Console.Write("\n");
+			Console.Write("Aukštinė: ");
+			val = Console.ReadLine();
+			h = Convert.ToInt32(val);
+			Console.Write("\n");
+			Console.Write("Test " + r +"  "+ h + "\n");
+			Console.Write("Iveskite teksta: ");  //8
+			val = Console.ReadLine();
+			Console.Write(val + "\n");
+			Console.Write("double skaicius: ");  //10-11
+			val = Console.ReadLine();
+			d = Convert.ToDouble(val);
+			Console.Write(d + "\n");
+			Console.Write("Mūsų \t dienos kaip \t šventė,\n" + "Kaip \t žydėjimas \t vyšnios.");  //12
+
+			Console.ReadLine();
+
+		}
+	}
+}
