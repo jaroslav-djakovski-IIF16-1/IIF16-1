@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1._2
+{
+    class Program
+    {
+
+        public static string abc(string s, int i, string c) {
+
+            return s = s.Insert(i, c);
+
+        }
+        static void Main(string[] args)
+        {
+            string s, c;
+            int i;
+            Console.WriteLine("iveskite stringa: ");
+            s = Console.ReadLine();
+            Console.WriteLine("iveskite simbolio pozicija: ");
+            i = Convert.ToInt32(Console.ReadLine());
+            i--;
+            Console.WriteLine("iveskite simboli: ");
+            c = Console.ReadLine();
+            Console.WriteLine(abc(s, i, c));
+            Console.ReadLine();
+        }
+    }
+}
