@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lab1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int[] a = new int [90];
+			int b, n=0;
+
+			Console.WriteLine("kiek norite ivesti elementu?: ");
+			b = Convert.ToInt32(Console.ReadLine());
+			for (int i = 0; i < b; i++) {
+				Console.WriteLine("Iveskite elementa: ");
+				a[i] = Convert.ToInt32(Console.ReadLine());
+				if (a[i] > 0)
+					n++;
+
+			}
+			Console.WriteLine("is viso nenuliniu elementu yra: " + n);
+
+			Console.ReadLine();
+
+		}
+	}
+}
