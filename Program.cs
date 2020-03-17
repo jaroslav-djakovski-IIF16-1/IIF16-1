@@ -8,10 +8,7 @@ namespace Lab_3_4
 {
     class Program
     {
-        public static void Galutinis()
-        {
 
-        }
         static void Main(string[] args)
         {
             string vard;
