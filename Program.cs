@@ -29,7 +29,7 @@ namespace Lab_3_4
             string s = new String('-', 50);
             Console.WriteLine(String.Format("{0,-15} {1,-15} {2,5}", "Vardas", "Pavardė", "Galutinis (Vid.)"));
             Console.WriteLine(s);
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < sk; i++)
             {
 
                 Console.WriteLine(String.Format("{0,-15} {1,-25} {2:.##}", vardas[i], pavarde[i], g[i]));
@@ -64,9 +64,9 @@ namespace Lab_3_4
             }
 
             string s = new String('-', 50);
-            Console.WriteLine(String.Format("{0,-15} {1,-15} {2,5}", "Vardas", "Pavardė", "Galutinis (Vid.)"));
+            Console.WriteLine(String.Format("{0,-15} {1,-15} {2,5}", "Vardas", "Pavardė", "Galutinis (Med.)"));
             Console.WriteLine(s);
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < sk; i++)
             {
 
                 Console.WriteLine(String.Format("{0,-15} {1,-25} {2:.##}", vardas[i], pavarde[i], g[i]));
