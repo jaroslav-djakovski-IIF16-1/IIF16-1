@@ -236,14 +236,14 @@ namespace Lab_3_4
             }
             stud.Close();
 
-
+            studentai.Sort((x, y) => string.Compare(x.pavarde, y.pavarde));
+            studentai.Sort((x, y) => string.Compare(x.vardas, y.vardas));
             string s = new String('-', 80);
             Console.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
             Console.WriteLine(s);
             foreach (var student in studentai)
             {
                 Console.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
-               // Console.WriteLine(student.vardas + "  " + student.pavarde + "  " + student.vidurkis + "   " + student.mediana);
             }
             Console.WriteLine(s);
             Console.ReadLine();
