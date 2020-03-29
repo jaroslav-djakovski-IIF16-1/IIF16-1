@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Lab_3_4
 {
     class Program
     {
+
+        public class studentas
+        {
+            public string vardas { get; set; }
+            public string pavarde { get; set; }
+            public double vidurkis { get; set; }
+            public double mediana { get; set; }
+        }
         public static void vidurkis(List<string> a, int sk)
         {
             double vid = 0;
@@ -188,9 +197,28 @@ namespace Lab_3_4
         }
 
         public static void file() {
+            
+            var studentai = new List<studentas>();
+            int counter = 0;
+            string line;
+            StreamReader stud = new StreamReader(@"d:\Studentai.txt");
+            while ((line = stud.ReadLine()) != null)
+            {
+                string[] words = line.Split(new char [0], StringSplitOptions.RemoveEmptyEntries);
+                if (counter != 0)
+                {
+                    //Console.WriteLine(words[2]);
+                    counter++;
+                    
+                }
+                else
+                    counter++;
+
+            }
+            stud.Close();
+
             Console.WriteLine("work in progress ");
             Console.ReadLine();
-
         }
         static void Main(string[] args)
         {
