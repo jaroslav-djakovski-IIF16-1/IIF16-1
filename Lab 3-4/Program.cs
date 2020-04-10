@@ -10,12 +10,12 @@ namespace Lab_3_4
     class Program
     {
 
-        public class studentas
+        struct studentas
         {
-            public string vardas { get; set; }
-            public string pavarde { get; set; }
-            public double vidurkis { get; set; }
-            public double mediana { get; set; }
+            public string vardas;
+            public string pavarde;
+            public double vidurkis;
+            public double mediana;
         }
         public static void vidurkis(List<string> a, int sk)
         {
@@ -91,14 +91,16 @@ namespace Lab_3_4
 
         }
 
-        public static string random() {
+        public static string random()
+        {
             Random rnd = new Random();
             int b;
-            int  nr;
+            int nr;
             string result = "";
             nr = rnd.Next(1, 11);
-            for (int i = 0; i < nr; i++){
-                b= rnd.Next(1, 11);
+            for (int i = 0; i < nr; i++)
+            {
+                b = rnd.Next(1, 11);
                 result = result + b;
                 if (i < nr - 1)
                     result = result + " ";
@@ -116,7 +118,8 @@ namespace Lab_3_4
             return result;
         }
 
-        public static void menu() {
+        public static void menu()
+        {
 
             Console.WriteLine("Norite duomenys nuskaityti is failo ar ivesite ranka? (iveskite 'file' ar 'ranka'). Jei norite uzdaryti programa parasykite 'exit' ");
             string a = Console.ReadLine();
@@ -141,7 +144,8 @@ namespace Lab_3_4
 
         }
 
-        public static void ranka() {
+        public static void ranka()
+        {
 
             string vard, pazymiai, egz;
             double[] galutinis = new double[10000];
@@ -196,8 +200,9 @@ namespace Lab_3_4
 
         }
 
-        public static void file() {
-            
+        public static void file()
+        {
+
             List<studentas> studentai = new List<studentas>();
             int counter = 0;
             int[] paz = new int[10];
@@ -206,27 +211,29 @@ namespace Lab_3_4
             StreamReader stud = new StreamReader(@"d:\Studentai.txt");
             while ((line = stud.ReadLine()) != null)
             {
-                string[] words = line.Split(new char [0], StringSplitOptions.RemoveEmptyEntries);
+                string[] words = line.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
                 if (counter != 0)
                 {
-                    for (int i = 2; i <= 7; i++) {
+                    for (int i = 2; i <= 7; i++)
+                    {
 
                         vid = vid + Convert.ToInt32(words[i]);
                     }
                     vid = vid / 6;
                     vid = (0.3 * vid) + (0.7 * Convert.ToInt32(words[7]));
 
-                    for (int i = 2; i <= 7; i++) {
+                    for (int i = 2; i <= 7; i++)
+                    {
 
-                        paz[i-2] = Convert.ToInt32(words[i]);
+                        paz[i - 2] = Convert.ToInt32(words[i]);
                     }
                     Array.Sort(paz);
 
-                    med = (paz[2] + paz [3]) / 2;
+                    med = (paz[2] + paz[3]) / 2;
 
                     med = (0.3 * med) + (0.7 * Convert.ToInt32(words[7]));
 
-                    studentai.Add(new studentas{ vardas = words[0], pavarde = words[1], vidurkis = vid, mediana = med });
+                    studentai.Add(new studentas { vardas = words[0], pavarde = words[1], vidurkis = vid, mediana = med });
                     counter++;
 
                 }
