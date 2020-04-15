@@ -27,7 +27,15 @@ namespace Lab_3_4
             StreamReader stud = null;
             Console.WriteLine("Iveskite failo direktorija: ");
             string dirPath = @"" + Console.ReadLine();
-            stud = new StreamReader(dirPath);
+            try
+            {
+                stud = new StreamReader(dirPath);
+            }
+            catch {
+                Console.WriteLine("Blogai ivesta failo direktorija. Bandykite is naujo. (Press any key to continue.)");
+                Console.ReadLine();
+                file();
+            }
             while ((line = stud.ReadLine()) != null)
             {
                 string[] words = line.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
@@ -35,11 +43,28 @@ namespace Lab_3_4
                 {
                     for (int i = 2; i <= 7; i++)
                     {
-
-                        vid = vid + Convert.ToInt32(words[i]);
+                        try
+                        {
+                            vid = vid + Convert.ToInt32(words[i]);
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Blogai ivesti studento pazymiai faile. Bandykite is naujo. (Press any key to continue.)");
+                            Console.ReadLine();
+                            Program.menu();
+                        }
                     }
                     vid = vid / 6;
-                    vid = (0.3 * vid) + (0.7 * Convert.ToInt32(words[7]));
+                    try
+                    {
+                        vid = (0.3 * vid) + (0.7 * Convert.ToInt32(words[8]));
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Blogai ivesti studento egzamino pazymiai faile. Bandykite is naujo. (Press any key to continue.)");
+                        Console.ReadLine();
+                        Program.menu();
+                    }
 
                     for (int i = 2; i <= 7; i++)
                     {
@@ -50,7 +75,7 @@ namespace Lab_3_4
 
                     med = (paz[2] + paz[3]) / 2;
 
-                    med = (0.3 * med) + (0.7 * Convert.ToInt32(words[7]));
+                    med = (0.3 * med) + (0.7 * Convert.ToInt32(words[8]));
 
                     studentai.Add(new studentas { vardas = words[0], pavarde = words[1], vidurkis = vid, mediana = med });
                     counter++;

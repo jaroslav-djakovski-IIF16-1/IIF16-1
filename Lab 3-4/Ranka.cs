@@ -9,7 +9,7 @@ namespace Lab_3_4
     class Ranka
     {
         public static void ranka()
-        { 
+        {
 
             string vard, pazymiai, egz;
             double[] galutinis = new double[10000];
@@ -19,7 +19,15 @@ namespace Lab_3_4
             int studsk = 0;
 
             Console.WriteLine("Iveskite studentu skaiciu ");
+            try
+            {
                 studsk = Convert.ToInt32(Console.ReadLine());
+            }
+            catch {
+                Console.WriteLine("Ivestas ne skaicius. Bandykite is naujo. (Press any key to continue.)");
+                Console.ReadLine();
+                ranka();
+            }
 
             while (studsk > 0)
             {
@@ -46,8 +54,18 @@ namespace Lab_3_4
                     Console.WriteLine("iveskite studento egzamino pazymi. ");
                     egz = Console.ReadLine();
                 }
-                studentai.Add(split[0]);
-                studentai.Add(split[1]);
+
+                try
+                {
+                    studentai.Add(split[0]);
+                    studentai.Add(split[1]);
+                }
+                catch
+                {
+                    Console.WriteLine("Blogai ivestas studento vardas ir pavarde. Bandykite is naujo. (Press any key to continue.)");
+                    Console.ReadLine();
+                    ranka();
+                }
                 studentai.Add(pazymiai);
                 studentai.Add(egz);
                 a++;
@@ -61,7 +79,7 @@ namespace Lab_3_4
             if (check == "vidurkis")
                 vidurkis(studentai, a);
 
-           else if (check == "mediana")
+            else if (check == "mediana")
                 mediana(studentai, a);
             else
             {
@@ -82,12 +100,31 @@ namespace Lab_3_4
             {
                 string ab = a[i + 2 + c];
                 string[] paz = ab.Split(' ');
-                int[] pazymiai = Array.ConvertAll(paz, int.Parse);
+                int[] pazymiai = null;
+                try
+                {
+                    pazymiai = Array.ConvertAll(paz, int.Parse);
+                }
+                catch
+                {
+                    Console.WriteLine("Blogai ivestas studento pazymis. Bandykite is naujo. (Press any key to continue.)");
+                    Console.ReadLine();
+                    Program.menu();
+                }
+
                 foreach (int p in pazymiai)
                 {
                     vid = vid + p;
                 }
-                e = Convert.ToInt32(a[i + 3 + c]);
+                try
+                {
+                    e = Convert.ToInt32(a[i + 3 + c]);
+                }
+                catch {
+                    Console.WriteLine("Blogai ivestas studento egzamino pazymis. Bandykite is naujo. (Press any key to continue.)");
+                    Console.ReadLine();
+                    Program.menu();
+                }
                 vid = vid / pazymiai.Length;
                 g[i] = (0.3 * vid) + (0.7 * e);
                 vid = 0;
@@ -116,7 +153,17 @@ namespace Lab_3_4
             {
                 string ab = a[i + 2 + c];
                 string[] paz = ab.Split(' ');
-                int[] pazymiai = Array.ConvertAll(paz, int.Parse);
+                int[] pazymiai = null;
+                try
+                {
+                    pazymiai = Array.ConvertAll(paz, int.Parse);
+                }
+                catch
+                {
+                    Console.WriteLine("Blogai ivestas studento egzamino pazymis. Bandykite is naujo. (Press any key to continue.)");
+                    Console.ReadLine();
+                    Program.menu();
+                }
                 Array.Sort(pazymiai);
 
                 if (pazymiai.Length % 2 == 1)
@@ -128,7 +175,16 @@ namespace Lab_3_4
                     med = (pazymiai[(pazymiai.Length / 2) - 1] + pazymiai[(pazymiai.Length / 2)]);
                     med = med / 2;
                 }
-                e = Convert.ToInt32(a[i + 3 + c]);
+                try
+                {
+                    e = Convert.ToInt32(a[i + 3 + c]);
+                }
+                catch
+                {
+                    Console.WriteLine("Blogai ivestas studento egzamino pazymis. Bandykite is naujo. (Press any key to continue.)");
+                    Console.ReadLine();
+                    Program.menu();
+                }
                 g[i] = (0.3 * med) + (0.7 * e);
                 c = c + 3;
             }
