@@ -17,41 +17,39 @@ namespace Lab_3_4
     class Files
     {
 
-        public static void geresni(List<studentas> studentai)
+        public static void studSplit(List<studentas> studentai)
         {
 
             File.Create(@"d:\Geresni.txt").Close();
-
+            File.Create(@"d:\Blogesni.txt").Close();
+            int count = 0;
             using (StreamWriter ger = new StreamWriter(@"d:\Geresni.txt"))
             {
-                ger.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
-                foreach (var student in studentai)
+                using (StreamWriter bl = new StreamWriter(@"d:\Blogesni.txt"))
                 {
-                    if (student.vidurkis > 5)
+                    ger.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
+                    foreach (var student in studentai)
                     {
-                        ger.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                        if (student.vidurkis > 5)
+                        {
+                            ger.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                        }
+                        else
+                        {
+                            if (count == 0)
+                            {
+                                bl.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
+                                bl.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                                count++;
+                            }
+                            else
+                                bl.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+
+                        }
                     }
                 }
+
             }
-
-        }
-
-        public static void blogesni(List<studentas> studentai)
-        {
-            File.Create(@"d:\Blogesni.txt").Close();
-
-            using (StreamWriter bl = new StreamWriter(@"d:\Blogesni.txt"))
-            {
-                bl.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
-                foreach (var student in studentai)
-                {
-                    if (student.vidurkis <= 5)
-                    {
-                        bl.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
-                    }
-                }
-            }
-
         }
         public static void file()
         {
@@ -64,6 +62,7 @@ namespace Lab_3_4
             StreamReader stud = null;
             Console.WriteLine("Iveskite failo direktorija: ");
             string dirPath = @"" + Console.ReadLine();
+            var watch1 = System.Diagnostics.Stopwatch.StartNew();
             try
             {
                 stud = new StreamReader(dirPath);
@@ -126,18 +125,31 @@ namespace Lab_3_4
             stud.Close();
             studentai.Sort((x, y) => string.Compare(x.pavarde, y.pavarde));
             studentai.Sort((x, y) => string.Compare(x.vardas, y.vardas));
-            string s = new String('-', 80);
-            Console.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
-            Console.WriteLine(s);
-            foreach (var student in studentai)
+            watch1.Stop();
+            double laikas1 = watch1.ElapsedMilliseconds;
+            double sekundes1 = laikas1 / 1000;
+            Console.WriteLine("Duomenys suskaičiavo ir surušiavo per: " + sekundes1 + " sekundziu");
+            Console.WriteLine("Ar norite pamatyti duomenys ekrane? (Parašykite 'taip' jei norite juos pamatyti)");
+            string check = Console.ReadLine();
+
+            if (check == "taip")
             {
-                Console.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                string s = new String('-', 80);
+                Console.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
+                Console.WriteLine(s);
+                foreach (var student in studentai)
+                {
+                    Console.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                }
+                Console.WriteLine(s);
             }
-            Console.WriteLine(s);
 
-            geresni(studentai);
-            blogesni(studentai);
-
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            studSplit(studentai);
+            watch.Stop();
+            double laikas = watch.ElapsedMilliseconds;
+            double sekundes = laikas / 1000;
+            Console.WriteLine("Duomenys i failus padalino per: " + sekundes + " sekundziu");
             Console.ReadLine();
             Program.menu();
         }
