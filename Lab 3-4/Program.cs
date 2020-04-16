@@ -12,16 +12,19 @@ namespace Lab_3_4
         public static void menu()
         {
 
-            Console.WriteLine("Norite duomenys nuskaityti is failo ar ivesite ranka? (iveskite 'file' ar 'ranka'). Jei norite uzdaryti programa parasykite 'exit' ");
+            Console.WriteLine("Norite duomenys nuskaityti is failo ar ivesite ranka? (iveskite 'file' ar 'ranka') ar norite sugeneruoti atsitiktinius duomenys(generate). Jei norite uzdaryti programa parasykite 'exit' ");
             string a = Console.ReadLine();
             a = a.ToLower();
             switch (a)
             {
                 case "file":
-                    File.file();
+                    Files.file();
                     break;
                 case "ranka":
                     Ranka.ranka();
+                    break;
+                case "generate":
+                    generate();
                     break;
                 case "exit":
                     break;
@@ -30,6 +33,41 @@ namespace Lab_3_4
                     menu();
                     break;
             }
+
+        }
+
+        public static void generate() {
+
+            Random rnd = new Random();
+            int nr = 0;
+            string vard, pav;
+            Console.WriteLine("Iveskite failo direktorija ir pavadinima: ");
+            string dirPath = @"" + Console.ReadLine();
+            if (File.Exists(dirPath))
+            {
+                File.Delete(dirPath);
+            }
+            File.Create(dirPath).Close();
+            Console.WriteLine("Iveskite kiek skirtingu duomenu bus faile: ");
+            nr = Convert.ToInt32(Console.ReadLine());
+
+            using (StreamWriter writer = new StreamWriter(dirPath))
+            {
+                writer.WriteLine(String.Format("{0,-15} {1,-15} {2,-5} {3,-5} {4,-5} {5,-5} {6,-5} {7,-5} {8,5}", "Vardas", "Pavardė", "ND1", "ND2", "ND3", "ND4", "ND5", "ND6", "Egz."));
+                for (int i = 1; i <= nr; i++)
+                {
+                    int[] b = new int[10];
+                    for (int j = 0; j < 7; j++)
+                    {
+                        b[j] = rnd.Next(2, 11);
+                    }
+                    vard = "Vardas" + Convert.ToString(i);
+                    pav = "Pavardė" + Convert.ToString(i);
+                    writer.WriteLine(String.Format("{0,-15} {1,-15} {2,-5} {3,-5} {4,-5} {5,-5} {6,-5} {7,-5} {8,5}", vard, pav, b[0], b[1], b[2], b[3], b[4], b[5], b[6]));
+                }
+
+            }
+            menu();
 
         }
         static void Main(string[] args)

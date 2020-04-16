@@ -14,7 +14,7 @@ namespace Lab_3_4
         public double vidurkis;
         public double mediana;
     }
-    class File
+    class Files
     {
         public static void file()
         {
