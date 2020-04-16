@@ -16,6 +16,43 @@ namespace Lab_3_4
     }
     class Files
     {
+
+        public static void geresni(List<studentas> studentai)
+        {
+
+            File.Create(@"d:\Geresni.txt").Close();
+
+            using (StreamWriter ger = new StreamWriter(@"d:\Geresni.txt"))
+            {
+                ger.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
+                foreach (var student in studentai)
+                {
+                    if (student.vidurkis > 5)
+                    {
+                        ger.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                    }
+                }
+            }
+
+        }
+
+        public static void blogesni(List<studentas> studentai)
+        {
+            File.Create(@"d:\Blogesni.txt").Close();
+
+            using (StreamWriter bl = new StreamWriter(@"d:\Blogesni.txt"))
+            {
+                bl.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
+                foreach (var student in studentai)
+                {
+                    if (student.vidurkis <= 5)
+                    {
+                        bl.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                    }
+                }
+            }
+
+        }
         public static void file()
         {
 
@@ -31,7 +68,8 @@ namespace Lab_3_4
             {
                 stud = new StreamReader(dirPath);
             }
-            catch {
+            catch
+            {
                 Console.WriteLine("Blogai ivesta failo direktorija. Bandykite is naujo. (Press any key to continue.)");
                 Console.ReadLine();
                 file();
@@ -97,6 +135,10 @@ namespace Lab_3_4
                 Console.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
             }
             Console.WriteLine(s);
+
+            geresni(studentai);
+            blogesni(studentai);
+
             Console.ReadLine();
             Program.menu();
         }
