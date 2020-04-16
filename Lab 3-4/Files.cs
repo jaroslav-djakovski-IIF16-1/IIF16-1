@@ -124,7 +124,6 @@ namespace Lab_3_4
 
             }
             stud.Close();
-
             studentai.Sort((x, y) => string.Compare(x.pavarde, y.pavarde));
             studentai.Sort((x, y) => string.Compare(x.vardas, y.vardas));
             string s = new String('-', 80);

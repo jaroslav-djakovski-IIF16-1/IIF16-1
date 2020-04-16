@@ -51,6 +51,7 @@ namespace Lab_3_4
             Console.WriteLine("Iveskite kiek skirtingu duomenu bus faile: ");
             nr = Convert.ToInt32(Console.ReadLine());
 
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             using (StreamWriter writer = new StreamWriter(dirPath))
             {
                 writer.WriteLine(String.Format("{0,-15} {1,-15} {2,-5} {3,-5} {4,-5} {5,-5} {6,-5} {7,-5} {8,5}", "Vardas", "Pavardė", "ND1", "ND2", "ND3", "ND4", "ND5", "ND6", "Egz."));
@@ -67,6 +68,12 @@ namespace Lab_3_4
                 }
 
             }
+            watch.Stop();
+            double laikas = watch.ElapsedMilliseconds;
+            double sekundes = laikas / 1000;
+            Console.WriteLine("Duomenys sugeneravo per: " + sekundes + " sekundziu");
+            Console.ReadLine();
+
             menu();
 
         }
