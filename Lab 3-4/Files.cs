@@ -150,6 +150,8 @@ namespace Lab_3_4
             double laikas = watch.ElapsedMilliseconds;
             double sekundes = laikas / 1000;
             Console.WriteLine("Duomenys i failus padalino per: " + sekundes + " sekundziu");
+            Console.WriteLine("");
+            Console.WriteLine("išviso programa dirbo: " + (sekundes + sekundes1) + " sekundziu");
             Console.ReadLine();
             Program.menu();
         }
