@@ -18,7 +18,7 @@ namespace Lab_3_4
             switch (a)
             {
                 case "file":
-                    Files.file();
+                    choose();
                     break;
                 case "ranka":
                     Ranka.ranka();
@@ -31,6 +31,32 @@ namespace Lab_3_4
                 default:
                     Console.WriteLine("Blogas pasirinkimas");
                     menu();
+                    break;
+            }
+
+        }
+
+        public static void choose()
+        {
+            Console.WriteLine(" List / LinkedList / Queue ");
+            string a = Console.ReadLine();
+            a = a.ToLower();
+            switch (a)
+            {
+                case "list":
+                    Files.list();
+                    break;
+                case "linkedlist":
+                    FileLinkedList.linkedlist();
+                    break;
+                case "queue":
+                    FileQueue.queue();
+                    break;
+                case "exit":
+                    break;
+                default:
+                    Console.WriteLine("Blogas pasirinkimas");
+                    choose();
                     break;
             }
 

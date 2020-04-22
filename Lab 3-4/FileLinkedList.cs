@@ -7,18 +7,12 @@ using System.IO;
 
 namespace Lab_3_4
 {
-    struct studentas
-    {
-        public string vardas;
-        public string pavarde;
-        public double vidurkis;
-        public double mediana;
-    }
-    class Files
+    class FileLinkedList
     {
 
-        public static void studSplit(List<studentas> studentai)
+        public static void studSplit(LinkedList<studentas> studentai)
         {
+
             File.Create(@"d:\Geresni.txt").Close();
             File.Create(@"d:\Blogesni.txt").Close();
             int count = 0;
@@ -51,10 +45,10 @@ namespace Lab_3_4
             }
         }
 
-        public static void list()
+        public static void linkedlist()
         {
 
-            List<studentas> studentai = new List<studentas>();
+            LinkedList<studentas> studentai = new LinkedList<studentas>();
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -71,7 +65,7 @@ namespace Lab_3_4
             {
                 Console.WriteLine("Blogai ivesta failo direktorija. Bandykite is naujo. (Press any key to continue.)");
                 Console.ReadLine();
-                list();
+                linkedlist();
             }
             while ((line = stud.ReadLine()) != null)
             {
@@ -114,7 +108,7 @@ namespace Lab_3_4
 
                     med = (0.3 * med) + (0.7 * Convert.ToInt32(words[8]));
 
-                    studentai.Add(new studentas { vardas = words[0], pavarde = words[1], vidurkis = vid, mediana = med });
+                    studentai.AddLast(new studentas { vardas = words[0], pavarde = words[1], vidurkis = vid, mediana = med });
                     counter++;
 
                 }
