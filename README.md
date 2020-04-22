@@ -6,11 +6,18 @@ Testavimas buvo padarytas su **List<T>**, **LinkedList<T>** ir **Queue<T>** ir s
   
   
 **List<T>**  
-  1000: suskaičiavo per 0.003s, padalino i failus per 0.011. Išviso dirbo 0.014s;  
-  10000: suskaičiavo per 0.022s, padalino i failus per 0.047. Išviso dirbo 0.069s;  
-  100000: suskaičiavo per 0.219s, padalino i failus per 0.105. Išviso dirbo 0.324s;  
-  1000000: suskaičiavo per 2.115s, padalino i failus per 0.923. Išviso dirbo 3.038s;  
-  10000000: suskaičiavo per 21.44s, padalino i failus per 9.75. Išviso dirbo 31.19;  
+  1000: suskaičiavo per 0.003s, padalino i failus per 0.011s. Išviso dirbo 0.014s;  
+  10000: suskaičiavo per 0.022s, padalino i failus per 0.047s. Išviso dirbo 0.069s;  
+  100000: suskaičiavo per 0.219s, padalino i failus per 0.105s. Išviso dirbo 0.324s;  
+  1000000: suskaičiavo per 2.115s, padalino i failus per 0.923s. Išviso dirbo 3.038s;  
+  10000000: suskaičiavo per 21.44s, padalino i failus per 9.75s. Išviso dirbo 31.19s;  
   
 
 **LinkedList<T>**  
+  1000: suskaičiavo per 0.002s, padalino i failus per 0.011s. Išviso dirbo 0.013s;  
+  10000: suskaičiavo per 0.044s, padalino i failus per 0.021s. Išviso dirbo 0.065s;  
+  100000: suskaičiavo per 0.51s, padalino i failus per 0.099s. Išviso dirbo 0.609s;  
+  1000000: suskaičiavo per 2.626s, padalino i failus per 0.875s. Išviso dirbo 3.501s;  
+  10000000: suskaičiavo per 22.78s, padalino i failus per 8.913s. Išviso dirbo 31.693s; 
+  
+  **Queue<T>**  
