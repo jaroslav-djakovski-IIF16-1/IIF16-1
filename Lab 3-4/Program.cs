@@ -12,7 +12,9 @@ namespace Lab_3_4
         public static void menu()
         {
 
-            Console.WriteLine("Norite duomenys nuskaityti is failo ar ivesite ranka? (iveskite 'file' ar 'ranka') ar norite sugeneruoti atsitiktinius duomenys(generate). Jei norite uzdaryti programa parasykite 'exit' ");
+            Console.WriteLine("Norite duomenys nuskaityti iš failo ar ivesite ranka? (iveskite 'file' ar 'ranka')");
+            Console.WriteLine("Ar norite sugeneruoti atsitiktinius duomenys? (iveskite 'generate').");
+            Console.WriteLine("Jei norite uzdaryti programa parašykite 'exit' ");
             string a = Console.ReadLine();
             a = a.ToLower();
             switch (a)

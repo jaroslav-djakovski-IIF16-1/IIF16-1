@@ -118,7 +118,7 @@ namespace Lab_3_4
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
             double sekundes1 = laikas1 / 1000;
-            Console.WriteLine("Duomenys suskaičiavo ir surušiavo per: " + sekundes1 + " sekundziu");
+            Console.WriteLine("Duomenys suskaičiavo per: " + sekundes1 + " sekundziu");
             Console.WriteLine("Ar norite pamatyti duomenys ekrane? (Parašykite 'taip' jei norite juos pamatyti)");
             string check = Console.ReadLine();
 
