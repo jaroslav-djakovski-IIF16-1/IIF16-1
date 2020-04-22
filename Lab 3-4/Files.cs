@@ -123,8 +123,6 @@ namespace Lab_3_4
 
             }
             stud.Close();
-            studentai.Sort((x, y) => string.Compare(x.pavarde, y.pavarde));
-            studentai.Sort((x, y) => string.Compare(x.vardas, y.vardas));
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
             double sekundes1 = laikas1 / 1000;
