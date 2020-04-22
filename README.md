@@ -26,4 +26,6 @@ Testavimas buvo padarytas su **List<T>**, **LinkedList<T>** ir **Queue<T>** ir s
   10000: suskaičiavo per 0.022s, padalino i failus per 0.02s. Išviso dirbo 0.042s;  
   100000: suskaičiavo per 0.479s, padalino i failus per 0.099s. Išviso dirbo 0.578s;  
   1000000: suskaičiavo per 2.666s, padalino i failus per 0.894s. Išviso dirbo 3.56s;  
-  10000000: suskaičiavo per 22.655s, padalino i failus per 10.67s. Išviso dirbo 33.325s; 
+  10000000: suskaičiavo per 22.655s, padalino i failus per 10.67s. Išviso dirbo 33.325s;
+  
+ **Išvados:** Iš atliktos programos greičio analizes matoma, kad konteinerių pasirinkimas turi vos pastebimą įtaka ant programos veikimo greičio.
