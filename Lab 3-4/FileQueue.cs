@@ -44,9 +44,33 @@ namespace Lab_3_4
             }
         }
 
+        public static void studSplit2(Queue<studentas> geresni, Queue<studentas> blogesni)
+        {
+            File.Create(@"d:\Geresni.txt").Close();
+            File.Create(@"d:\Blogesni.txt").Close();
+            using (StreamWriter ger = new StreamWriter(@"d:\Geresni.txt"))
+            {
+                ger.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
+                foreach (var student in geresni)
+                {
+                    ger.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                }
+            }
+            using (StreamWriter bl = new StreamWriter(@"d:\Blogesni.txt"))
+            {
+                bl.WriteLine(String.Format("{0,-15} {1,-15} {2,-15} {3,25}", "Vardas", "Pavardė", "Galutinis (vid.)", "Galutinis (med.)"));
+                foreach (var student in blogesni)
+                {
+                    bl.WriteLine(String.Format("{0,-15} {1,-25} {2, -25} {3, 0}", student.vardas, student.pavarde, Math.Round(student.vidurkis, 2), student.mediana));
+                }
+            }
+        }
+
         public static void queue()
         {
             Queue<studentas> studentai = new Queue<studentas>();
+            Queue<studentas> geresni = new Queue<studentas>();
+            Queue<studentas> blogesni = new Queue<studentas>();
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -115,6 +139,17 @@ namespace Lab_3_4
 
             }
             stud.Close();
+            foreach (var student in studentai)
+            {
+                if (student.vidurkis > 5)
+                {
+                    geresni.Enqueue(new studentas { vardas = student.vardas, pavarde = student.pavarde, vidurkis = student.vidurkis, mediana = student.mediana });
+                }
+                else
+                {
+                    blogesni.Enqueue(new studentas { vardas = student.vardas, pavarde = student.pavarde, vidurkis = student.vidurkis, mediana = student.mediana });
+                }
+            }
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
             double sekundes1 = laikas1 / 1000;
@@ -135,7 +170,8 @@ namespace Lab_3_4
             }
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            studSplit(studentai);
+            //studSplit(studentai);
+            studSplit2(geresni, blogesni);
             watch.Stop();
             double laikas = watch.ElapsedMilliseconds;
             double sekundes = laikas / 1000;
