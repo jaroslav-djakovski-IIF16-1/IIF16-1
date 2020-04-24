@@ -54,3 +54,18 @@ Bendro studentai konteinerio skaidymas į du naujus to paties tipo konteinerius.
   100000: suskaičiavo per 0.221s, padalino i failus per 0.116s. Išviso dirbo 0.337s;  
   1000000: suskaičiavo per 2.138s, padalino i failus per 0.876s. Išviso dirbo 3.014s;  
   10000000: suskaičiavo per 22.225s, padalino i failus per 8.584s. Išviso dirbo 30.808s;
+  
+  
+  **2 strategija**  
+  Bendro studentų konteinerio skaidymas panaudojant tik vieną naują konteinerį: "vargšiukai". Tokiu būdu, jei studentas yra
+vargšiukas, jį turime įkelti į naująjį "vargšiukų" konteinerį ir ištrinti iš bendro studentai konteinerio.
+
+
+ **List<T>**  
+  1000: suskaičiavo per 0.145s, padalino i failus per 0.029s. Išviso dirbo 0.174s;  
+  10000: suskaičiavo per 3.234s, padalino i failus per 0.039s. Išviso dirbo 3.273s;  
+  100000: Per ilgai.
+  
+
+**LinkedList<T>**  
+
