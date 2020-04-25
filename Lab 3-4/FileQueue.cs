@@ -70,7 +70,6 @@ namespace Lab_3_4
         {
             Queue<studentas> studentai = new Queue<studentas>();
             Queue<studentas> blogesni = new Queue<studentas>();
-            long memory = GC.GetTotalMemory(true);
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -153,6 +152,7 @@ namespace Lab_3_4
                    studentai.Dequeue();
                 }
             }
+            long memory = GC.GetTotalMemory(true);
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
             double sekundes1 = laikas1 / 1000;

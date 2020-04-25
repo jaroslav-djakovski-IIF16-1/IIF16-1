@@ -78,7 +78,6 @@ namespace Lab_3_4
 
             List<studentas> studentai = new List<studentas>();
             List<studentas> blogesni = new List<studentas>();
-            long memory = GC.GetTotalMemory(true);
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -165,6 +164,7 @@ namespace Lab_3_4
                 }
                 studentai.TrimExcess();
             }
+            long memory = GC.GetTotalMemory(true);
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
             double sekundes1 = laikas1 / 1000;

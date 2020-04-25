@@ -72,7 +72,6 @@ namespace Lab_3_4
 
             LinkedList<studentas> studentai = new LinkedList<studentas>();
             LinkedList<studentas> blogesni = new LinkedList<studentas>();
-            long memory = GC.GetTotalMemory(true);
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -155,6 +154,7 @@ namespace Lab_3_4
                     studentai.RemoveFirst();
                 }
             }
+            long memory = GC.GetTotalMemory(true);
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
             double sekundes1 = laikas1 / 1000;
