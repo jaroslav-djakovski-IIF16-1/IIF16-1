@@ -70,6 +70,7 @@ namespace Lab_3_4
         {
             Queue<studentas> studentai = new Queue<studentas>();
             Queue<studentas> blogesni = new Queue<studentas>();
+            long memory = GC.GetTotalMemory(true);
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -180,6 +181,7 @@ namespace Lab_3_4
             Console.WriteLine("Duomenys i failus padalino per: " + sekundes + " sekundziu");
             Console.WriteLine("");
             Console.WriteLine("išviso programa dirbo: " + (sekundes + sekundes1) + " sekundziu");
+            Console.WriteLine("Memory usage: " + memory + " bytes");
             Console.ReadLine();
             Program.menu();
         }

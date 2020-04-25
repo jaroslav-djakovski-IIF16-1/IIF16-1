@@ -78,6 +78,7 @@ namespace Lab_3_4
 
             List<studentas> studentai = new List<studentas>();
             List<studentas> blogesni = new List<studentas>();
+            long memory = GC.GetTotalMemory(true);
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -192,6 +193,7 @@ namespace Lab_3_4
             Console.WriteLine("Duomenys i failus padalino per: " + sekundes + " sekundziu");
             Console.WriteLine("");
             Console.WriteLine("išviso programa dirbo: " + (sekundes + sekundes1) + " sekundziu");
+            Console.WriteLine("Memory usage: " + memory + " bytes");
             Console.ReadLine();
             Program.menu();
         }
