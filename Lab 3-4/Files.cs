@@ -77,7 +77,7 @@ namespace Lab_3_4
         {
 
             List<studentas> studentai = new List<studentas>();
-            List<studentas> blogesni = new List<studentas>();
+            //List<studentas> blogesni = new List<studentas>();
             int counter = 0;
             int[] paz = new int[10];
             string line;
@@ -146,7 +146,6 @@ namespace Lab_3_4
 
             }
             stud.Close();
-            int loop = studentai.Count;
             /* foreach (var student in studentai)
              {
                  if (student.vidurkis < 5)
@@ -154,7 +153,7 @@ namespace Lab_3_4
                      blogesni.Add(new studentas { vardas = student.vardas, pavarde = student.pavarde, vidurkis = student.vidurkis, mediana = student.mediana });
                      studentai.Remove(new studentas() { vardas = student.vardas, pavarde = student.pavarde, vidurkis = student.vidurkis, mediana = student.mediana });
                  }
-             }*/
+             }
             for (int i = studentai.Count - 1; i >= 0; i--)
             {
                 if (studentai[i].vidurkis < 5)
@@ -163,7 +162,7 @@ namespace Lab_3_4
                     studentai.Remove(studentai[i]);
                 }
                 studentai.TrimExcess();
-            }
+            }*/
             long memory = GC.GetTotalMemory(true);
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
@@ -185,8 +184,8 @@ namespace Lab_3_4
             }
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            //studSplit(studentai);
-            studSplit2(studentai, blogesni);
+            studSplit(studentai);
+            //studSplit2(studentai, blogesni);
             watch.Stop();
             double laikas = watch.ElapsedMilliseconds;
             double sekundes = laikas / 1000;

@@ -138,7 +138,7 @@ namespace Lab_3_4
 
             }
             stud.Close();
-            for (int i = studentai.Count - 1; i >= 0; i--)
+            /*for (int i = studentai.Count - 1; i >= 0; i--)
             {
                 studentas head = studentai.First();
                 if (head.vidurkis < 5)
@@ -151,7 +151,7 @@ namespace Lab_3_4
                    studentai.Enqueue(head);
                    studentai.Dequeue();
                 }
-            }
+            }*/
             long memory = GC.GetTotalMemory(true);
             watch1.Stop();
             double laikas1 = watch1.ElapsedMilliseconds;
@@ -173,8 +173,8 @@ namespace Lab_3_4
             }
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            //studSplit(studentai);
-            studSplit2(studentai, blogesni);
+            studSplit(studentai);
+            //studSplit2(studentai, blogesni);
             watch.Stop();
             double laikas = watch.ElapsedMilliseconds;
             double sekundes = laikas / 1000;

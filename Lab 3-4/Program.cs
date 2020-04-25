@@ -40,7 +40,7 @@ namespace Lab_3_4
 
         public static void choose()
         {
-            Console.WriteLine(" List / LinkedList / Queue ");
+            Console.WriteLine("List / LinkedList / Queue ");
             string a = Console.ReadLine();
             a = a.ToLower();
             switch (a)
