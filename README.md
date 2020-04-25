@@ -86,3 +86,82 @@ Bendro studentai konteinerio skaldimas i failus pagal studento galutinį balą;
   10000000: suskaičiavo per 22.655s, padalino i failus per 10.67s. Išviso dirbo 33.325s;  Memory usage: 1238247420 bytes;
   
   **Išvados:** visuose stategijuose darbo laikas ir atminties naudojamas buvo labai panašus (išskyrus 2 strategijos List<T> ten darbo laikas LABAI pailgėjo), dėl to galima naudoti bet kokį iš sių strategijų ir konteinerių.
+  
+
+# Releases
+
+**[V0.1](https://github.com/jaroslav-djakovski-IIF16-1/IIF16-1/tree/V0.1)**  
+**3 laboratorino darbo įgyvendinta versija 0.1.**  
+
+ProgramMasyvas.cs - veikia su masyvais ir nezymonu skaiciu namų darbų, skaičiuoja galutinį balą palei vidurkį ar medianą.  
+ProgramList.cs - veikia su listųir nezymomu skaiciu namų darbų, skaičiuoja galutinį balą palei vidurkį ar medianą.  
+Program.cs - veikia kaip praeitas su listai, bet šiame galima sugeneruoti atsitiktinius namų darbų ir egzamino pažymius.  
+
+
+**[V0.2](https://github.com/jaroslav-djakovski-IIF16-1/IIF16-1/tree/V0.2)**  
+**3 laboratorino darbo įgyvendinta versija 0.2.**  
+
+Šioje versijoje buvo dadetas menu iš kurio galima pasirinkti ar duomenys bus ivedami ranka (viskas kas buvo v0.1) ar nuskaitomi iš failo.  
+
+Duomenys kurie yra nuskaityti yra apdorojami ir iš jų gaunamas galutinis balas su vidurkių ir mediana ir yra išsaugojami su studentu vardais į lista.  
+
+Prieš išvedima listas yra rūšiuojamas palei studentu pavardes o po to palei vardus kad visi duomenys butu abėcėles tvarka. 
+
+
+**[V0.3](https://github.com/jaroslav-djakovski-IIF16-1/IIF16-1/tree/V0.3)**  
+**3 laboratorino darbo įgyvendinta versija 0.3.**  
+
+Šioje versijoje projektas buvo iškaldytas i kelis .cs failus, panaudota struct'ūra ir dadetas išimčių valdymas kuris patikrina duomenus ivestus ranka bei iš failo.  
+
+Taip pat šioje versijoje buvo ištaisytos klaido iš praeitų releasu, tokios kaip:  
+
+1. Įvedant duomenys ranka dabar negalima praleisti pasirinkimo kokiu būdų bus skaičiuojamas pažymys (mediana ar vidurkis)  
+2. Dadeta galimybe pačiam įvesti failo direktorija.  
+3. Ištaisytas galutinio balo skaičiavimas nuskaitant iš failo (buvo imamas paskutinis pažymys vietoj egzamino balo)  
+
+
+**[V0.4](https://github.com/jaroslav-djakovski-IIF16-1/IIF16-1/tree/V0.4)**  
+**3 laboratorino darbo įgyvendinta versija 0.4.**  
+
+Šioje versijoje buvo dadetas failų generavimas, studentų duomenu dalinimas palei galutini bala įrašant į failą ir programos greičio matavimas  
+
+Failus generuoti galima norimų didžių ir juos galimą įrašyti į norimą direktorija.  
+
+Studentų duomenys yra dalinami kai jie yra nuskaitomi norint apskaičiuoti galutini balą ir yra dalinami palei vidurki o ne palei mediana.  
+
+Programos veikimo greitis yra matuojamas su Stopwatch. Laikas yra matuojamas keliose programos vietuose ir išvedamas sekundemis ekrane. 
+
+
+**[V0.5](https://github.com/jaroslav-djakovski-IIF16-1/IIF16-1/tree/V0.5)**  
+**4 laboratorino darbo įgyvendinta versija 0.5.**  
+
+Šioje versijoje buvo dadetas failu nuskaitymas ir saugojimas su List, LinkedList ir Queue. Buvo padarytas programos veikimo greičio testavimas su 1000, 10000, 100000, 1000000, 10000000 atsitiktiniais duomenimis.  
+
+
+**[V1.0](https://github.com/jaroslav-djakovski-IIF16-1/IIF16-1/tree/V1.0)** (ši versija)  
+
+Šioje versijoje buvo atliekamas testavimas pagal veikimo greiti ir atminties naudojima, kad surasti su kokia darbo strategija veiks galutine versija (Strategijos aprašytos konteinerių testavime) ir buvo parinkta 3 strategija (mano).
+
+
+# Naudojimosi instrukcija
+
+Ijungus programa yra 4 pasirinkimai žiurint kas bus įrašytą: 
+1. **file** - programa dirbs su failų;  
+2. **ranka** - vartotojas pats ranka tures įvesti duomenys;  
+3. **generate** - vartojas galės sugeneruoti pavyzdinį failą su atsitiktiniais duomenimis norimoje direktorijoje, pavadinimų ir norimo didžio.  
+4. **exit** - programa yra uždaroma.  
+
+### File
+Jei buvo parinkas darbas su failų, vartotojas tures pasirinkti konteinerio tipą **List / LinkedList / Queue**, bet iš testavimo matome, kad ant programos greitaveikos tai neturi įtakos.  
+Ten vartotojas turi ivesti kur randasi jo failas ir jo pavadinimas pvz.:D:\c#\10000.txt ir tada vyks darbas su failu.  
+Po balų skaičiavimo yra galimybė išvesti duomenis į ekrana jei vartotojas įves *taip*, jei įves bet ką kito ar išvis nieko, programa veiks toliau.  
+Gale programa surušiuoja studentus į **geresnius** ir **blogesnius** pagal galutini balą (geresni=>5, blogesni<5) ir irašo juos į failus su atitinkamais pavadinimas i **D:\ direktorija**.   
+Jei duomenys buvo blogai ivesti, programa informuos kur atsitiko klaida ir prades darba iš naujo. 
+
+
+### Ranka
+Jei buvo parinkas darbas ranka, vartuotojas pirmiausiai turi įvestu studentu skaičiu.  
+Veliau programi reikes per tarpus suvesti visus duomenys kurios jį prašo per tarpus (studento varda ir pavardė, pažymius, egzamino balą). Kai bus įvesti visi duomenys apie studentą, programa prašys ivesti kito studento duomenys ir tiek kartų kiek buvo įvestas studentų skaičius.  
+Programa duomenų įvedumo metų dar klaus ar vartotojas nori sugeneruoti atsitiktinius pažymius ir egzamino balą. Jei vartotojas to norės, tai jis turės įvesti žodi *taip*, jei ne, paspausti *Enter* myktuką ar įrašyti bet ką kito.  
+Kai visi duomenys bus įvesti, tai programa klaus kaip skaičiuoti galutinį balą, palei vidurki ar medianą. Vartotojas gales pasirinkti įvedus žodi **vidurkis** ar **mediana**.  
+Jei duomenys buvo blogai ivesti, programa informuos kur atsitiko klaida ir prades darba iš naujo.
