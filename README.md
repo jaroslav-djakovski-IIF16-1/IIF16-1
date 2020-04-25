@@ -83,4 +83,6 @@ Bendro studentai konteinerio skaldimas i failus pagal studento galutinį balą;
   10000: suskaičiavo per 0.022s, padalino i failus per 0.02s. Išviso dirbo 0.042s;  
   100000: suskaičiavo per 0.479s, padalino i failus per 0.099s. Išviso dirbo 0.578s;      Memory usage: 10740012 bytes;  
   1000000: suskaičiavo per 2.666s, padalino i failus per 0.894s. Išviso dirbo 3.56s;  
-  10000000: suskaičiavo per 22.655s, padalino i failus per 10.67s. Išviso dirbo 33.325s;  Memory usage: 1238247420 bytes;  
+  10000000: suskaičiavo per 22.655s, padalino i failus per 10.67s. Išviso dirbo 33.325s;  Memory usage: 1238247420 bytes;
+  
+  **Išvados:** visuose stategijuose darbo laikas ir atminties naudojamas buvo labai panašus (išskyrus 2 strategijos List<T> ten darbo laikas LABAI pailgėjo), dėl to galima naudoti bet kokį iš sių strategijų ir konteinerių.
