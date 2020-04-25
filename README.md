@@ -33,27 +33,27 @@ Testavimas buvo padarytas su **List<T>**, **LinkedList<T>** ir **Queue<T>** ir s
 Bendro studentai konteinerio skaidymas į du naujus to paties tipo konteinerius. Tokiu būdu tas pats studentas yra dvejuose konteineriuose: bendrame studentai ir viename iš suskaidytų.  
   
  **List<T>**  
-  1000: suskaičiavo per 0.003s, padalino i failus per 0.025s. Išviso dirbo 0.028s;  
+  1000: suskaičiavo per 0.003s, padalino i failus per 0.025s. Išviso dirbo 0.028s;        Memory usage: 166548 bytes;   
   10000: suskaičiavo per 0.24s, padalino i failus per 0.043s. Išviso dirbo 0.067s;  
-  100000: suskaičiavo per 0.224s, padalino i failus per 0.128s. Išviso dirbo 0.352s;  
+  100000: suskaičiavo per 0.224s, padalino i failus per 0.128s. Išviso dirbo 0.352s;      Memory usage: 14671040 bytes;  
   1000000: suskaičiavo per 2.537s, padalino i failus per 0.896s. Išviso dirbo 3.433s;  
-  10000000: suskaičiavo per 22.046s, padalino i failus per 8.742s. Išviso dirbo 30.788s;  
+  10000000: suskaičiavo per 22.046s, padalino i failus per 8.742s. Išviso dirbo 30.788s;  Memory usage: 1540237532 bytes;  
   
 
 **LinkedList<T>**  
-  1000: suskaičiavo per 0.003s, padalino i failus per 0.03s. Išviso dirbo 0.033s;  
+  1000: suskaičiavo per 0.003s, padalino i failus per 0.03s. Išviso dirbo 0.033s;         Memory usage: 193096 bytes;  
   10000: suskaičiavo per 0.024s, padalino i failus per 0.018s. Išviso dirbo 0.042s;  
-  100000: suskaičiavo per 0.233s, padalino i failus per 0.132s. Išviso dirbo 0.356s;  
+  100000: suskaičiavo per 0.233s, padalino i failus per 0.132s. Išviso dirbo 0.356s;      Memory usage: 16393112 bytes;  
   1000000: suskaičiavo per 2.369s, padalino i failus per 0.928s. Išviso dirbo 3.297s;  
-  10000000: suskaičiavo per 24.822s, padalino i failus per 8.952s. Išviso dirbo 33.774s; 
+  10000000: suskaičiavo per 24.822s, padalino i failus per 8.952s. Išviso dirbo 33.774s;  Memory usage: 1715593136 bytes;  
   
   
 **Queue<T>**  
-  1000: suskaičiavo per 0.001s, padalino i failus per 0.011s. Išviso dirbo 0.012s;  
+  1000: suskaičiavo per 0.001s, padalino i failus per 0.011s. Išviso dirbo 0.012s;        Memory usage: 166572 bytes;  
   10000: suskaičiavo per 0.021s, padalino i failus per 0.02s. Išviso dirbo 0.041s;  
-  100000: suskaičiavo per 0.221s, padalino i failus per 0.116s. Išviso dirbo 0.337s;  
+  100000: suskaičiavo per 0.221s, padalino i failus per 0.116s. Išviso dirbo 0.337s;      Memory usage: 14671064 bytes;  
   1000000: suskaičiavo per 2.138s, padalino i failus per 0.876s. Išviso dirbo 3.014s;  
-  10000000: suskaičiavo per 22.225s, padalino i failus per 8.584s. Išviso dirbo 30.808s;
+  10000000: suskaičiavo per 22.225s, padalino i failus per 8.584s. Išviso dirbo 30.808s;  Memory usage: 1540236240 bytes;   
   
   
   **2 strategija**  
