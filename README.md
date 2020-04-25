@@ -68,11 +68,11 @@ vargšiukas, jį turime įkelti į naująjį "vargšiukų" konteinerį ir ištri
   
 
 **LinkedList<T>**  
-  1000: suskaičiavo per 0.003s, padalino i failus per 0.031s. Išviso dirbo 0.034s;       Memory usage: 148912 bytes; 
-  10000: suskaičiavo per 0.021s, padalino i failus per 0.041s. Išviso dirbo 0.062s;      Memory usage: 1192916 bytes; 
+  1000: suskaičiavo per 0.003s, padalino i failus per 0.031s. Išviso dirbo 0.034s;       Memory usage: 148912 bytes;  
+  10000: suskaičiavo per 0.021s, padalino i failus per 0.041s. Išviso dirbo 0.062s;      Memory usage: 1192916 bytes;  
   100000: suskaičiavo per 0.256s, padalino i failus per 0.19s. Išviso dirbo 0.446s;      Memory usage: 11992924 bytes;  
-  1000000: suskaičiavo per 2.829s, padalino i failus per 0.943s. Išviso dirbo 3.772s;    Memory usage: 123592936 bytes; 
-  10000000: suskaičiavo per 26.416s, padalino i failus per 9.716s. Išviso dirbo 36.132s; Memory usage: 1275592932 bytes; 
+  1000000: suskaičiavo per 2.829s, padalino i failus per 0.943s. Išviso dirbo 3.772s;    Memory usage: 123592936 bytes;  
+  10000000: suskaičiavo per 26.416s, padalino i failus per 9.716s. Išviso dirbo 36.132s; Memory usage: 1275592932 bytes;  
   
   
   **Queue<T>**  
