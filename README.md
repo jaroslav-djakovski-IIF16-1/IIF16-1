@@ -62,10 +62,22 @@ vargšiukas, jį turime įkelti į naująjį "vargšiukų" konteinerį ir ištri
 
 
  **List<T>**  
-  1000: suskaičiavo per 0.145s, padalino i failus per 0.029s. Išviso dirbo 0.174s;  
-  10000: suskaičiavo per 3.234s, padalino i failus per 0.039s. Išviso dirbo 3.273s;  
-  100000: Per ilgai.
+  1000: suskaičiavo per 0.04s, padalino i failus per 0.011s. Išviso dirbo 0.051s;        Memory usage: 135132 bytes;  
+  10000: suskaičiavo per 3.114s, padalino i failus per 0.019s. Išviso dirbo 3.133s;      Memory usage: 1026220 bytes;  
+  100000: suskaičiavo per 322.634s, padalino i failus per 0.164s. Išviso dirbo 322.798s; Memory usage: 1125940 bytes;  
   
 
 **LinkedList<T>**  
-
+  1000: suskaičiavo per 0.003s, padalino i failus per 0.031s. Išviso dirbo 0.034s;       Memory usage: 148912 bytes; 
+  10000: suskaičiavo per 0.021s, padalino i failus per 0.041s. Išviso dirbo 0.062s;      Memory usage: 1192916 bytes; 
+  100000: suskaičiavo per 0.256s, padalino i failus per 0.19s. Išviso dirbo 0.446s;      Memory usage: 11992924 bytes;  
+  1000000: suskaičiavo per 2.829s, padalino i failus per 0.943s. Išviso dirbo 3.772s;    Memory usage: 123592936 bytes; 
+  10000000: suskaičiavo per 26.416s, padalino i failus per 9.716s. Išviso dirbo 36.132s; Memory usage: 1275592932 bytes; 
+  
+  
+  **Queue<T>**  
+  1000: suskaičiavo per 0.004s, padalino i failus per 0.017s. Išviso dirbo 0.021s;       Memory usage: 152256 bytes;  
+  10000: suskaičiavo per 0.021s, padalino i failus per 0.021s. Išviso dirbo 0.042s;      Memory usage: 1244420 bytes;  
+  100000: suskaičiavo per 0.231s, padalino i failus per 0.138s. Išviso dirbo 0.369s;     Memory usage: 11525072 bytes;  
+  1000000: suskaičiavo per 2.202s, padalino i failus per 0.91s. Išviso dirbo 3.112s;     Memory usage: 117341660 bytes;  
+  10000000: suskaičiavo per 21.956s, padalino i failus per 9.088s. Išviso dirbo 30.808s; Memory usage: 1338909400 bytes;  
